@@ -38,10 +38,11 @@ public class LoginController extends HttpServlet {
 
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getUserByUsername(username);
+        boolean isAdmin = false;
         System.out.println(user);
         if (user != null) {
             if (password.equals(user.getPassword())) { // login success
-                if (username.equals("admin")) {
+                if (user.isIsAdmin()== true) {
                     response.sendRedirect("admin.html"); // Đăng nhập admin
                 } else {
                     HttpSession session = request.getSession();

@@ -16,7 +16,7 @@
     
     session.invalidate();
     
-    response.sendRedirect("HomePage.jsp");
+    response.sendRedirect("home_page.jsp");
         %>
     </body>
 </html>
