@@ -1,18 +1,16 @@
 package controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Date;
 import model.BookingService;
 
 @WebServlet(name = "AdminController", urlPatterns = {"/AdminController"})
@@ -36,13 +34,20 @@ public class AdminController extends HttpServlet {
             while (rs.next()) {
                 int serviceId = rs.getInt("service_id");
                 String serviceName = rs.getString("service_name");
-                String bookingDate = rs.getString("booking_date");
-                String bookingTime = rs.getString("booking_time");
+                Date bookingDate = new Date(rs.getDate("booking_date").getTime());
+                Date bookingTime = new Date(rs.getTime("booking_time").getTime());
                 int quantity = rs.getInt("quantity");
                 String notes = rs.getString("notes");
                 double price = rs.getDouble("price");
 
-                BookingService service = new BookingService(serviceName, bookingDate, bookingTime, quantity, price, notes);
+                BookingService service = new BookingService(
+                        serviceId,
+                        serviceName,
+                        bookingDate,
+                        bookingTime,
+                        quantity,
+                        notes,
+                        price);
                 services.add(service);
             }
         } catch (Exception e) {
