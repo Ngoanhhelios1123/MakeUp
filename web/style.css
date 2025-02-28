@@ -1,0 +1,59 @@
+/* Căn chỉnh Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Các phần cách đều nhau */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+}
+
+/* Logo */
+.header img {
+    height: 60px; /* Đảm bảo logo không quá lớn */
+}
+
+/* Thanh tìm kiếm */
+.search {
+    flex: 1; /* Cho phép chiếm không gian linh hoạt */
+    display: flex;
+    justify-content: center;
+}
+
+.sizesearch {
+    width: 1500px; /* Chiều rộng của ô tìm kiếm */
+    max-width: 400px; /* Giới hạn tối đa */
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Giỏ hàng */
+
+.banner {
+    background: url('image/banner2.jpg') no-repeat center center/cover;
+    padding: 150px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+body {
+    padding-top: 70px; /* Điều chỉnh theo chiều cao navbar */
+}
+#logo{
+    border-radius: 80%;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: flex-end; /* Canh phải */
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+
+
+
+
+
+
+
