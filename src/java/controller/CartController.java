@@ -1,4 +1,5 @@
 package controller;
+
 import controller.DBUtils;
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,6 +13,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @WebServlet("/CartController")
 public class CartController extends HttpServlet {
