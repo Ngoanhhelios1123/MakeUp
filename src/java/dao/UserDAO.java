@@ -30,6 +30,7 @@ public class UserDAO {
                 + "      ,[phone]\n"
                 + "      ,[address]\n"
                 + "      ,[created_at]\n"
+                + "      ,[is_admin]\n"
                 + "  FROM [Users]\n"
                 + "  WHERE username = ?";
         try {
@@ -44,7 +45,8 @@ public class UserDAO {
                         rs.getString("full_name"),
                         rs.getString("email"),
                         rs.getString("phone"),
-                        rs.getString("address")
+                        rs.getString("address"),
+                        rs.getBoolean("is_admin")
                 // chua co created_at
                 );
                 return user;

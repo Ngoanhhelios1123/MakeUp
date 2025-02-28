@@ -9,13 +9,15 @@ public class User {
     private String email;
     private String phone; // Đổi từ int sang String
     private String address;
+    private boolean isAdmin;
 
     // Constructor rỗng
     public User() {
     }
 
     // Constructor đầy đủ
-    public User(int id, String username, String password, String fullName, String email, String phone, String address) {
+
+    public User(int id, String username, String password, String fullName, String email, String phone, String address, boolean isAdmin) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -23,16 +25,18 @@ public class User {
         this.email = email;
         this.phone = phone;
         this.address = address;
-    }
+        this.isAdmin = isAdmin;
+    }  
 
-    public User(String username, String password, String fullName, String email, String phone, String address) {
+    public User(String username, String password, String fullName, String email, String phone, String address, boolean isAdmin) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.address = address;
-    }
+        this.isAdmin = isAdmin;
+    } 
 
     // Getter và Setter
     public int getId() {
@@ -90,4 +94,14 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public boolean isIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+    
+    
 }
